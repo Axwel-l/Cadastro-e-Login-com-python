@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% if request.user.is_authenticated%}
+    <h1>Area Restrita</h1>
+    <br>
+    <a href="/logouts/">Sair</a>
+    <a href="/redChangePassword/">Sair trocar senha</a>
+    {%else%}
+    Voce não tem acesso a essa area
+    {%endif%}
+
+{% endblock content %}

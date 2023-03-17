@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+    <form name="formPainel" id="formPainel" method="post" action="/dologin/" >
+        <div class="col-6 mt-4 m-auto">
+
+            {% if msg %}
+                <div class="alert {{class}}">
+                    {{msg}}
+                </div>
+            {% endif %}
+            {%csrf_token%}
+            <input type="text" name="user" id="user" placeholder="Nome do Usuário:" class="form-control mt-4">
+            <input type="password" name="password" id="password" placeholder="Senha:" class="form-control mt-4">
+            <input type="submit" value="Entrar" class="btn btn-dark mt-4">
+        </div>
+    </form>
+{% endblock content %}
